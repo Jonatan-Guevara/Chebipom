@@ -1,7 +1,9 @@
-(function(){
-  const listElements = document.querySelectorAll('.menu_item--show');
-  const list = document.querySelector('.menu_links');
-  const menu = document.querySelector('.menu__hamburguer');
+(function () {
+  const listElements = document.querySelectorAll(".menu_item--show");
+  const links = document.querySelectorAll(".menu_link");
+  const menu = document.querySelector(".hamburguer");
+  const menuNavegacion = document.querySelector(".menu-navegacion");
+  const X = document.querySelector(".X");
 
   const addClick =()=>{
     listElements.forEach(element =>{
@@ -21,7 +23,15 @@
     })
   }
 
-  addClick()
+
+  const linksClick = () => {
+    links.forEach((link) => {
+      link.addEventListener("click", () => {
+        menuNavegacion.classList.toggle("spread");
+        X.style.display = "none";
+      });
+    });
+  };
+  //linksClick();
+  addClick();
 })();
-
-
